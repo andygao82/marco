@@ -1,67 +1,39 @@
 <?php
-/* Template Name: Home Page */
+/* Template Name: Project Page */
 get_header();
 $img_path = get_template_directory_uri( '/' );
 
 ?>
-<div class="landing-banner">
-    <div class="container">
-        <div class="wrapper">
-            <a href="javascript:;" id="enter">ENTER</a>
-        </div>
-    </div>
-</div>
 <main>
-    <section class="banner"></section>
-    <section class="slogan">
+    <section class="banner" style="background-image: url(<?= get_field('project_hero_image') ?>)"></section>
+    <section class="project-description">
         <div class="container">
             <div class="wrapper">
-                <img src="<?php echo $img_path.'/images/zynerge_secondary.svg' ?>" alt="Zynergy" id="slogan-logo">
-                <div class="slogan-content">
-                    <?php if(!empty(get_field('home_slogan_1'))) :?>
-                        <span><?= get_field('home_slogan_1')?></span>
-                    <?php endif; ?>
-                    <?php if(!empty(get_field('home_slogan_2'))) :?>
-                        <span><?= get_field('home_slogan_2')?></span>
-                    <?php endif; ?>
+                <h1><?= get_field('project_name') ?></h1>
+                <div class="project-description-text">
+                    <?= get_field('project_description') ?>
                 </div>
             </div>
         </div>
     </section>
-    <section class="projects" id="projects">
-        <?php for ($i = 1; $i < 3; $i ++){?>
-        <div class="project project<?= $i ?>">
-            <div class="wrapper">
-                <div class="project-image">
-                    <img src="<?php echo get_field('project_image_'.$i.'') ?>" alt="Zynergy">
-                </div>
-                <div class="project-detail">
-                    <div class="project-detail-wrapper">
-                        <a href="<?php echo get_field('project_link_'.$i.'')?>" class="project-detail-logo">
-                            <img src="<?php echo get_field('project_logo_'.$i.'')?>" alt="Zynergy">
-                        </a>
-                        <div class="project-detail-address-status">
-                            <span><?= get_field('project_address_'.$i.'')?></span>
-                            <span><?= get_field('project_status_'.$i.'')?></span>
-                        </div>
-                        <a href="<?php echo get_field('project_link_'.$i.'')?>" class="link project-detail-more">MORE DETAIL</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php } ?>
-    </section>
-    <section class="projects-coming">
+    <section class="project-images">
         <div class="wrapper">
-            <ul>
-                <?php for ($j = 1; $j < 4; $j ++){?>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="<?php echo get_field('project_coming_'.$j.'')?>" alt="Zynergy">
-                        </a>
-                    </li>
-                <?php }?>
-            </ul>
+            <?php for ($i = 1; $i < 3; $i ++){?>
+                <?php if(get_field('project_gallery_image_'.$i.'')):?>
+                <div class="project-image">
+                    <img src="<?php echo get_field('project_gallery_image_'.$i.'') ?>" alt="Zynergy">
+                </div>
+                <?php endif; ?>
+            <?php } ?>
+        </div>
+        <div class="wrapper">
+            <?php for ($i = 3; $i < 5; $i ++){?>
+                <?php if(get_field('project_gallery_image_'.$i.'')):?>
+                    <div class="project-image">
+                        <img src="<?php echo get_field('project_gallery_image_'.$i.'') ?>" alt="Zynergy">
+                    </div>
+                <?php endif; ?>
+            <?php } ?>
         </div>
     </section>
 </main>

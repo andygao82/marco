@@ -27,3 +27,52 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+// bg
+@mixin bg() {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+// transition
+@mixin transition($time: .5s) {
+	transition: all $time ease-in-out;
+}
+
+// Button Style
+@mixin btnStyle() {
+	position: relative;
+	text-transform: uppercase;
+	color: $color__brown;
+	font-size: 2.2rem;
+	font-family: Mark, sans-serif;
+	letter-spacing: 2.2px;
+	@include transition(.5s);
+	&:before, &:after{
+		content: '';
+		display: inline-block;
+		margin-right: 8px;
+		width: 5px;
+		height: 2px;
+		background-color: $color__brown;
+		vertical-align: middle;
+		@include transition(.5s);
+	}
+	&:after{
+		opacity: 0;
+		margin-left: 8px;
+		margin-right: 0;
+	}
+	&:hover{
+		color: $color__gold;
+		&:before{
+			opacity: 0;
+			color: $color__gold;
+		}
+		&:after{
+			opacity: 1;
+			color: $color__gold;
+		}
+	}
+}

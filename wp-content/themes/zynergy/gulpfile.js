@@ -25,7 +25,7 @@ function css() {
 function watch() {
     browserSync.init({
         //browsersync with a php server
-        proxy: "http://localhost/marco/",
+        proxy: "http://localhost/zynergy/",
         notify: true
     });
     gulp.watch("./sass/**/*", css);
