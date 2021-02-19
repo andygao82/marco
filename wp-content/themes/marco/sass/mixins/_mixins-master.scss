@@ -27,3 +27,22 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+@mixin flex($direction: row, $justContent: space-between) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justContent;
+}
+
+@mixin transction($time: .5s){
+	transition: all $time ease-in-out;
+}
+
+@mixin hoverFocusActive($color: #fff, $backgroundColor: #fff) {
+	@include transction();
+	&:hover, &:focus, &:active{
+		text-decoration: none;
+		color: $color;
+		background-color: $backgroundColor;
+	}
+}

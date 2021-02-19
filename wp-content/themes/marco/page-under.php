@@ -4,7 +4,7 @@ get_header();
 $img_path = get_template_directory_uri( '/' );
 
 ?>
-
+    
 <main>
     <div class="wrapper">
         <div class="inner-wrapper">

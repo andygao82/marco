@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,700;0,800;1,500&display=swap');
 $color__green: #0B4531;
 $color__brown: #BD742C;
+$color__dark: #1c1c1c;
 html{
   font-size: 10px;
 }
@@ -213,7 +214,6 @@ ul{
     }
   }
 }
-
 .page-template-page-covid{
   header, footer{
     display: none;
@@ -275,6 +275,42 @@ ul{
       }
     }
   }
+}
+@media (min-width: 1700px){
+	.container{
+		max-width: 1670px;
+	}
+}
+@media (min-width: 1200px){
+	nav#nav{
+		width: calc(100% - 450px);
+		.menu{
+			@include flex();
+			margin-top: 30px;
+			li{
+				a{
+					text-transform: uppercase;
+					color: $color__brown;
+					font-weight: 700;
+					font-size: 2.2rem;
+					@include hoverFocusActive(#fff, transparent);
+				}
+			}
+		}
+	}
+}
+header{
+	background-color: $color__dark;
+	padding: 20px 0;
+	.marco-logo{
+		display: block;
+		width: 100%;
+		max-width: 190px;
+	}
+	.wrapper{
+		@include flex();
+	}
+
 }
 /////////////////////////////////////////
 @media screen and (max-width: 1700px){
@@ -429,7 +465,6 @@ ul{
     }
   }
 }
-
 @media screen and (max-width: 767px){
   .page-template-page-under{
     main{
