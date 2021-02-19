@@ -7,12 +7,17 @@ html{
 }
 body{
   font-family: 'Raleway', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 .post, .page{
   margin-bottom: 0;
 }
 a{
   text-decoration: none;
+  &:visited{
+	  color: #ffffff;
+  }
 }
 ul{
   list-style: none;
@@ -206,11 +211,11 @@ ul{
     align-items: center;
     margin: 0 20px;
     a{
-      color: $color__green;
-      transition: all .25s ease-in-out;
-      &:hover{
-        color: $color__brown;
-      }
+		color: $color__green;
+		transition: all .25s ease-in-out;
+		&:hover{
+			color: $color__brown;
+		}
     }
   }
 }
@@ -310,7 +315,86 @@ header{
 	.wrapper{
 		@include flex();
 	}
+}
+footer{
+	color: #ffffff;
+	background-color: $color__dark;
+	padding: 50px 0 40px;
+	#footer-logo{
+		display: block;
+		width: 100%;
+		max-width: 250px;
+	}
+	h3{
+		font-size: 2.2rem;
+		color: #ffffff;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+	a{
+		color: #ffffff;
+		@include hoverFocusActive($color__brown, transparent);
+	}
+	.top-row{
+		.wrapper{
+			@include flex();
+			@include pbm();
+			ul{
+				li{
+					margin-bottom: 5px;
+				}
+			}
+			.footer-opening-hours{
+				span{
+					display: block;
+				}
+			}
+			.footer-newsletter{
+				min-width: 600px;
+				label{
+					display: none !important;
+				}
+				.mc-field-group{
+					margin-bottom: 15px;
+					input{
+						background-color: transparent;
+						border-radius: 0;
+						border: 0;
+						border-bottom: 2px solid $color__brown;
+						font-size: 1.6rem;
+						font-style: italic;
+						width: 100%;
+						max-width: unset;
 
+					}
+				}
+				.mc-fields{
+					@include flex();
+					.mc-field-group{
+						width: 100%;
+						max-width: 48%;
+					}
+				}
+				.footer-submit{
+					border: 0;
+					background-color: transparent;
+					background: transparent;
+					color: #ffffff;
+					border-radius: 0;
+					font-size: 2rem;
+					text-transform: uppercase;
+					letter-spacing: 4px;
+					line-height: 1.6;
+					padding: 20px 0 0;
+				}
+			}
+		}
+	}
+	.bottom-row{
+		.wrapper{
+			
+		}
+	}
 }
 /////////////////////////////////////////
 @media screen and (max-width: 1700px){

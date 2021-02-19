@@ -38,11 +38,18 @@
 	transition: all $time ease-in-out;
 }
 
-@mixin hoverFocusActive($color: #fff, $backgroundColor: #fff) {
+@mixin hoverFocusActive($color: #fff, $backgroundColor: #fff, $opacity: 1) {
 	@include transction();
 	&:hover, &:focus, &:active{
 		text-decoration: none;
 		color: $color;
 		background-color: $backgroundColor;
+		opacity: $opacity;
 	}
+}
+
+@mixin pbm($paddingBottom: 30px, $borderColor: #BD742C, $marginBottom: 30px) {
+	margin-bottom: $marginBottom;
+	border-bottom: 1px solid $borderColor;
+	padding-bottom: $paddingBottom;
 }
