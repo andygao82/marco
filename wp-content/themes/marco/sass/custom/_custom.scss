@@ -12,6 +12,7 @@ body{
 }
 .post, .page{
   margin-bottom: 0;
+  overflow-x: hidden;
 }
 a{
   text-decoration: none;
@@ -196,7 +197,6 @@ ul{
   }
 }
 .social-media{
-  margin: 30px auto 0;
   display: flex;
   list-style: none;
   justify-content: center;
@@ -307,6 +307,7 @@ ul{
 header{
 	background-color: $color__dark;
 	padding: 20px 0;
+	height: 130px;
 	.marco-logo{
 		display: block;
 		width: 100%;
@@ -392,7 +393,72 @@ footer{
 	}
 	.bottom-row{
 		.wrapper{
-			
+			@include flex();
+			align-items: center;
+			.right-corner{
+				@include flex();
+				align-items: center;
+				.social-media{
+					a{
+						display: inline-block;
+						margin-left: 25px;
+						font-size: 1.3em;
+					}
+				}
+				#dd{
+					margin-left: 50px;
+				}
+			}
+		}
+	}
+}
+main{
+	.banner{
+		&.banner-home{
+			.flexslider{
+				margin-bottom: 0;
+				border: 0;
+				border-radius: 0;
+				box-shadow: none;
+				ul{
+					li{
+						position: relative;
+						width: 100%;
+						height: calc(100vh - 131px);
+						overflow: hidden;
+						img{
+							@include imgFit();
+						}
+						h2{
+							@include centerItem();
+							font-weight: 700;
+							color: #ffffff;
+							font-size: 6.5rem;
+							letter-spacing: 9.75px;
+							line-height: 100px;
+							z-index: 9;
+						}
+					}
+				}
+				.flex-direction-nav{
+					display: none;
+				}
+				.flex-control-paging {
+					bottom: 60px;
+					z-index: 10;
+					li{
+						a{
+							background: #ffffff;
+							box-shadow: none;
+							@include transction();
+							&.flex-active{
+								width: 100px;
+								background-color: $color__brown;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
