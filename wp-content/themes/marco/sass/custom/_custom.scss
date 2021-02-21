@@ -14,11 +14,17 @@ body{
   margin-bottom: 0;
   overflow-x: hidden;
 }
+h2{
+	font-size: 4rem;
+	line-height: 1.6;
+	letter-spacing: 2px;
+	font-weight: 700;
+	margin-bottom: 1em;
+	color: #ffffff;
+}
 a{
   text-decoration: none;
-  &:visited{
-	  color: #ffffff;
-  }
+  @include hoverFocusActive(#fff, transparent)
 }
 ul{
   list-style: none;
@@ -286,6 +292,11 @@ ul{
 		max-width: 1670px;
 	}
 }
+@media (min-width: 1500px){
+	.container{
+		max-width: 1470px;
+	}
+}
 @media (min-width: 1200px){
 	nav#nav{
 		width: calc(100% - 450px);
@@ -400,9 +411,11 @@ footer{
 				align-items: center;
 				.social-media{
 					a{
+						position: relative;
 						display: inline-block;
 						margin-left: 25px;
 						font-size: 1.3em;
+						@include linkBtmLine($color__brown)
 					}
 				}
 				#dd{
@@ -412,7 +425,67 @@ footer{
 		}
 	}
 }
+.map{
+	width: 100%;
+	height: 600px;
+	background-image: url('../images/map.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	color: #fff;
+	a{
+		color: #fff;
+	}
+	.wrapper{
+		display: inline-block;
+		margin-top: 95px;
+		background-color: $color__green;
+		padding: 60px 80px;
+		h2{
+			letter-spacing: 8.25px;
+		}
+		h4{
+			font-weight: bold;
+			font-size: 2.2rem;
+			margin-bottom: 5px;
+		}
+		p{
+			margin-bottom: 5px;
+		}
+		.content{
+			margin-bottom: 40px;
+		}
+		.link{
+			margin-right: 80px;
+		}
+	}
+}
+.link{
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	font-size: 2rem;
+	margin: 0 auto;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	line-height: 1.2;
+	font-weight: 600;
+	color: #ffffff;
+	padding: 20px 0;
+	text-decoration: none;
+	@include linkBtmLine();
+	@include linkHover();
+}
 main{
+	.section{
+		h2{
+			font-size: 4rem;
+			line-height: 1.6;
+			letter-spacing: 2px;
+			font-weight: 700;
+			margin-bottom: 1em;
+		}
+	}
 	.banner{
 		&.banner-home{
 			.flexslider{
@@ -462,229 +535,442 @@ main{
 		}
 	}
 }
+.about-section{
+	color: #ffffff;
+	background-color: $color__brown;
+	padding: 60px 45px;
+	.wrapper{
+		@include flex();
+		.about-video{
+			position: relative;
+			width: calc(100% - 460px);
+			i{
+				position: absolute;
+				color: #fff;
+				font-size: 8rem;
+				@include centerItem();
+				@include transction();
+				@include hoverFocusActive($color__green, transparent)
+			}
+		}
+		.about-our-story{
+			width: 100%;
+			max-width: 400px;
+			@include flex(column, center);
+			&-content{
+				margin-bottom: 80px;
+				p{
+					margin-bottom: 0;
+				}
+			}
+			
+		}
+	}
+}
+.category-section{
+	padding: 60px 45px;
+	color: #ffffff;
+	background-color: $color__dark;
+	h2, a{
+		color: #ffffff;
+	}
+	.col-category{
+		margin-bottom: 30px;
+		&:nth-last-child(-n+2){
+			margin-bottom: 0;
+		}
+		.wrapper{
+			overflow: hidden;
+			&::before{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: rgba(189, 116, 44, .6);
+				z-index: 5;
+				width: 100%;
+				height: 100%;
+			}
+			@include imgWrapper(39%, relative);
+			&:hover{
+				img{
+					transform: scale(1.02) translate(-50%, -50%);
+				}
+			}
+			a{
+				display: block;
+			}
+			img{
+				@include transction();
+				@include imgFit();
+			}
+			.inner-wrapper{
+				@include centerItem();
+				z-index: 5;
+			}
+		}
+	}
+}
 /////////////////////////////////////////
 @media screen and (max-width: 1700px){
-  .page-template-page-under{
-    main{
-      .logo{
-        max-width: 360px;
-        margin-bottom: 30px;
-      }
-      .wrapper{
-        .inner-wrapper{
-          top: 150px;
-          max-width: 1300px;
-          p{
-            font-size: 1.4rem;
-          }
-          .top{
-            h1{
-              font-size: 5rem;
-              letter-spacing: 4px;
-            }
-          }
-          .middle{
-            h2{
-              font-size: 2.2rem;
-              img{
-                max-width: 25px;
-                margin-left: 20px;
-              }
-            }
-            #mc_embed_signup{
-              form{
-                #mc_embed_signup_scroll{
-                  max-width: 990px;
-                  .mc-field-group{
-                    input{
-                      width: 100%;
-                      min-width: unset !important;
-                    }
-                  }
-                }
-              }
-            }
-          }
-          .bottom{
-            ul{
-              li{
-                font-size: 3.5rem;
-              }
-            }
-            .contact{
-              font-size: 2rem;
-              max-width: 990px;
-            }
-          }
-        }
-      }
-    }
-  }
+	body{
+		font-size: 1.4rem;
+	}
+	.page-template-page-under{
+		main{
+		.logo{
+			max-width: 360px;
+			margin-bottom: 30px;
+		}
+		.wrapper{
+			.inner-wrapper{
+			top: 150px;
+			max-width: 1300px;
+			p{
+				font-size: 1.4rem;
+			}
+			.top{
+				h1{
+				font-size: 5rem;
+				letter-spacing: 4px;
+				}
+			}
+			.middle{
+				h2{
+				font-size: 2.2rem;
+				img{
+					max-width: 25px;
+					margin-left: 20px;
+				}
+				}
+				#mc_embed_signup{
+				form{
+					#mc_embed_signup_scroll{
+					max-width: 990px;
+					.mc-field-group{
+						input{
+						width: 100%;
+						min-width: unset !important;
+						}
+					}
+					}
+				}
+				}
+			}
+			.bottom{
+				ul{
+				li{
+					font-size: 3.5rem;
+				}
+				}
+				.contact{
+				font-size: 2rem;
+				max-width: 990px;
+				}
+			}
+			}
+		}
+		}
+	}
+	.link{
+		font-size: 1.6rem;
+		letter-spacing: 3.33px;
+		padding: 16px 0;
+	}
+	nav#nav .menu li a{
+		font-size: 1.83rem;
+	}
+	header{
+		height: 120px;
+		.marco-logo{
+			max-width: 160px;
+		}
+	} 
+	footer{
+		#footer-logo{
+			max-width: 210px;
+		}
+		h3{
+			font-size: 2rem;
+		}
+	}
+	h2{
+		font-size: 3.33rem;
+	}
+	main{
+		.section{
+			h2{
+				font-size: 3.33rem;
+			}
+		}
+		.banner{
+			&.banner-home{
+				.flexslider{
+					ul{
+						li{
+							height: calc(100vh - 120px);
+							h2{
+								font-size: 5.4rem;
+								letter-spacing: 8.125px;
+								line-height: 83px;
+							}
+						}
+					}
+					.flex-control-paging{
+						bottom: 50px;
+					}
+				}
+			}
+		}
+	}
+	.about-section, .category-section{
+		padding: 50px 37.5px;
+	}
+	.map{
+		height: 500px;
+		.wrapper{
+			padding: 50px 66.67px;
+			margin-top: 62px;
+			h4{
+				font-size: 2rem;
+			}
+			.link{
+				margin-right: 60px;
+			}
+		}
+	}
 }
 @media screen and (max-width: 1199px){
-  .page-template-page-under{
-    main{
-      .logo{
-        max-width: 280px;
-        margin-bottom: 20px;
-      }
-      .wrapper{
-        .inner-wrapper{
-          top: 120px;
-          max-width: 990px;
-          .top{
-            h1{
-              font-size: 4rem;
-              letter-spacing: 3px;
-            }
-          }
-          .middle{
-            h2{
-              font-size: 2rem;
-              img{
-                max-width: 22px;
-              }
-            }
-          }
-          .bottom{
-            ul{
-              li{
-                font-size: 2.4rem;
-              }
-            }
-            .contact{
-              font-size: 1.6rem;
-            }
-          }
-        }
-      }
-    }
-  }
+	header{
+		.marco-logo{
+			z-index: 100;
+		}
+	}
+	nav#nav{
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: -200%;
+		opacity: 0;
+		visibility: hidden;		
+		background-color: $color__green;
+		z-index: 99;
+		@include transction(1s);
+		&.active{
+			left: 0;
+			opacity: 1;
+			visibility: visible;	
+		}
+		.menu-menu-1-container{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			ul{
+				@include centerItem();
+				li{
+					a{
+						display: block;
+						color: #fff;
+						text-align: center;
+						padding: 10px 15px;
+						white-space: nowrap;
+						font-size: 2.2rem;
+						text-transform: uppercase;
+						font-weight: 700;
+						@include hoverFocusActive(#fff, transparent, .5)
+					}
+				}
+			}
+		}
+	}
+	#nav-icon{
+		display: block;
+		position: absolute;
+		width: 30px;
+		height: 20px;
+		cursor: pointer;
+		right: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		@include transction();
+		z-index: 100;
+		span{
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			border-radius: 15px;
+			background-color: #ffffff;
+			left: 0;
+			@include transction(.25s);
+			&:first-child{
+				top: 0;
+			}
+			&:last-child{
+				bottom: 0;
+			}
+		}
+		&.open{
+			span{
+				top: 10px;
+				&:first-child{
+					transform: rotate(45deg);
+				}
+				&:last-child{
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+	main{
+		.section{
+			h2{
+				font-size: 2.8rem;
+				white-space: nowrap;
+			}
+		}
+		.banner{
+			&.banner-home{
+				.flexslider{
+					.flex-control-paging{
+						bottom: 30px;
+					}
+					ul{
+						li{
+							h2{
+								font-size: 3.6rem;
+								letter-spacing: 4px;
+								line-height: 1.6;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.about-section{
+		.wrapper{
+			.about-video{
+				width: calc(100% - 330px);
+			}
+			.about-our-story{
+				max-width: 300px;
+				&-content{
+					margin-bottom: 40px;
+				}
+			}
+		}
+	}
+	footer{
+		.top-row{
+			.wrapper{
+				flex-wrap: wrap;
+				.footer-newsletter{
+					width: 100%;
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: 991px){
-  .page-template-page-under{
-    main{
-      .logo{
-        max-width: 240px;
-      }
-      .wrapper{
-        .inner-wrapper{
-          .top{
-            h1{
-              font-size: 3.2rem;
-              letter-spacing: 2px;
-              sup{
-                font-size: 1.6rem;
-              }
-            }
-          }
-          .middle{
-            #mc_embed_signup{
-              form{
-                #mc_embed_signup_scroll{
-                  flex-wrap: wrap;
-                  .mc-field-group{
-                    width: 49%;
-                    margin-bottom: 10px;
-                    input{
-                      width: 100%;
-                      min-width: unset !important;
-                    }
-                  }
-                }
-              }
-            }
-          }
-          .bottom{
-            ul{
-              li{
-                font-size: 2rem;
-                padding: 0 15px;
-              }
-            }
-            .contact{
-              font-size: 1.6rem;
-              flex-direction: column;
-              .address{
-                margin-bottom: 5px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+	.about-section{
+		padding: 40px 0;
+		.wrapper{
+			flex-direction: column;
+			.about-video{
+				width: 100%;
+				margin-bottom: 30px;
+			}
+			.about-our-story{
+				max-width: unset;
+				&-content{
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+	.category-section{
+		padding: 40px 0;
+	}
 }
 @media screen and (max-width: 767px){
-  .page-template-page-under{
-    main{
-      .logo{
-        max-width: 150px;
-      }
-      .wrapper{
-        .inner-wrapper{
-          top: 40px;
-          p{
-            font-size: 1.2rem;
-            letter-spacing: .5px;
-          }
-          .top{
-            h1{
-              font-size: 1.8rem;
-              letter-spacing: 1px;
-              padding: 8px;
-              sup{
-                font-size: 1rem;
-              }
-            }
-          }
-          .middle{
-            h2{
-              font-size: 1.6rem;
-              letter-spacing: 1px;
-              img{
-                margin-left: 10px;
-              }
-            }
-            #mc_embed_signup{
-              form{
-                #mc_embed_signup_scroll{
-                  flex-wrap: wrap;
-                  .mc-field-group{
-                    width: 100%;
-                    margin-bottom: 5px;
-                   input{
-                     font-size: 1.4rem;
-                   }
-                  }
-                  .clear{
-                    width: 100%;
-                    margin: 5px auto 0;
-                    input{
-                      width: 100%;
-                    }
-                  }
-                }
-              }
-            }
-          }
-          .bottom{
-            padding: 8px;
-            ul{
-              display: none;
-            }
-            .contact{
-              font-size: 1.2rem;
-              .address{
-                margin-bottom: 5px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  .social-media{
-    margin-top: 15px;
-  }
+	main{
+		.banner{
+			&.banner-home{
+				.flexslider{
+					ul{
+						li{
+							height: calc(100vh - 97px);
+							h2{
+								letter-spacing: 1.6px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.category-section{
+		.col-category{
+			margin-bottom: 15px;
+			&:nth-child(9){
+				margin-bottom: 15px;
+			}
+		}
+	}
+	.map{
+		padding: 40px 0;
+		height: unset;
+		.wrapper{
+			margin-top: 0;
+			padding: 30px;
+		}
+	}
+	header{
+		height: auto;
+		.marco-logo{
+			max-width: 120px;
+		}
+	}
+	footer{
+		.top-row{
+			.wrapper{
+				flex-direction: column;
+				text-align: center;
+				.footer-newsletter{
+					min-width: unset;
+					.mc-fields{
+						flex-direction: column;
+						.mc-field-group{
+							max-width: 100%;
+						}
+					}
+				}
+			}
+		}
+		.bottom-row{
+			text-align: center;
+			.wrapper{
+				flex-direction: column;
+				span{
+					display: block;
+					margin-bottom: 15px;
+				}
+				.right-corner{
+					flex-direction: column;
+					#dd{
+						margin-top: 10px;
+						margin-left: 0;
+					}
+				}
+			}
+		}
+		#footer-logo{
+			margin: 0 auto 30px;
+		}
+		.footer-links, .footer-opening-hours{
+			margin-bottom: 30px;
+		}
+	}
 }

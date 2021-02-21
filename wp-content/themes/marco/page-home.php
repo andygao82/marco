@@ -3,12 +3,21 @@
     get_header();
     $img_path = get_template_directory_uri( '/' );
     $size = 'full';
-    
+    // $_categories = array(
+    //     array("name"=>"Fruit & Veggies","url"=>"fruit-veggies"), 
+    //     array("name"=>"Deli", "url"=>"deli"), 
+    //     array("name"=> "Butcher", "url"=>"butcher"), 
+    //     array("name"=> "Frozen Foods", "url"=> "frozen-foods"), 
+    //     array("name"=> "Groceries", "url"=> "groceries"), 
+    //     array("name"=> "Bakery", "url"=> "bakery"), 
+    //     array("name"=> "Dairy", "url"=> "dairy"), 
+    //     array("name"=> "Organic", "url"=> "organic"), 
+    //     array("name"=> "Flowers", "url"=> "flowers"), 
+    //     array("name"=> "Cafe", "url"=> "cafe"), 
+    // )
 ?>
-
-              
 <main>
-    <div class="banner banner-main banner-home">
+    <div class="banner banner-main banner-home banner-section">
         <div class="flexslider">
             <ul class="slides">
                 <?php for ($i = 1; $i <= 3; $i++) { ?>
@@ -26,6 +35,71 @@
             </ul>
         </div>
     </div>
+    <div class="section about-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="wrapper">
+                        <div class="about-video">
+                            <a href="https://www.youtube.com/watch?v=9i4SKHbhbqk" >
+                                <img src="https://img.youtube.com/vi/9i4SKHbhbqk/maxresdefault.jpg" alt="Our Story">
+                                <i class="far fa-play-circle"></i>
+                            </a>
+                        </div>
+                        <div class="about-our-story text-center">
+                            <h2>Our Story</h2>
+                            <div class="about-our-story-content">
+                                <?php echo get_field('home_video_content')?>
+                            </div>
+                            <a href="#" class="link">LEARN MORE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>                        
+        </div>
+    </div>
+    <div class="section category-section">
+        <div class="container-fluid">
+            <ul class="row">
+            <?php
+                global $post;
+                $myposts = get_posts( array(
+                    'numberposts'      => -1,
+                    'category'         => 3,
+                    'orderby'          => 'Date',
+                    'order'            => 'ASC'
+                ) );
+                if ( $myposts ) {
+                    foreach ( $myposts as $post ) :
+                        setup_postdata( $post ); ?>
+                        <li class="col-12 col-md-6 col-category">
+                            <div class="wrapper text-center">
+                                <?php $_thumbnail = get_the_post_thumbnail() ?>
+                                <a class="post-thumbnail" href="<?php echo esc_url( get_permalink() )?>">
+                                    <?php if($_thumbnail){ ?>
+                                            <?= get_the_post_thumbnail()?>
+                                    <?php }else{?>
+                                            <img src="<?php echo get_template_directory_uri('/'); ?>/images/bg.png" alt="Placeholder">
+                                    <?php } ?>
+                                </a>
+                                <div class="inner-wrapper">
+                                    <h2 class="category-title"><a href="<?php echo esc_url( get_permalink() )?>" rel="bookmark"><?php the_title() ?></a></h2>
+                                    <div class="category-link">
+                                        <a href="<?php echo esc_url( get_permalink() )?>" class="link">
+                                            Learn More
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    <?php
+                    endforeach;
+                    wp_reset_postdata();
+                }
+            ?>
+            </ul>
+        </div>
+    </div>
 </main>
 
 <?php get_footer(); ?>
@@ -36,7 +110,7 @@
             touch: true,  
             slideshow: true,                //Boolean: Animate slider automatically
             slideshowSpeed: 3000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
-            animationSpeed: 1000,  
+            animationSpeed: 1000
         });
     })
 </script>

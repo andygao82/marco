@@ -23,8 +23,8 @@
 									<p>830 Plenty Road, Reservoir VIC 3076</p>
 								</div>
 								<div class="links">
-									<a href="#">Conctact Us</a>
-									<a href="#">Get Direction</a>
+									<a href="#" class="link">Conctact Us</a>
+									<a target="_blank" class="link" href="https://www.google.com/maps/place/830+Plenty+Rd,+Reservoir+VIC+3073/@-37.7257248,145.0246712,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad645bf5d1452f5:0x39515cf6db36bab6!8m2!3d-37.7257248!4d145.0268599">Get Direction</a>
 								</div>
 							</div>
 						</div>
@@ -115,6 +115,29 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<script>
+	// function initMap(){
+	// 	var myLatLng = {lat: -37.7257205, lng: 145.0246659}
+	// 	var map = new google.maps.Map(document.getElementById("map"), {
+	// 		center: myLatLng,
+	// 		zoom: 16,
+ 	// 	});
+	// 	new google.maps.Marker({
+	// 		position: myLatLng,
+	// 		map,
+	// 		icon: "<?php echo get_template_directory_uri('/'); ?>/images/favicon.png"
+	// 	}) 
+	// }
+	// $(function () {
+	// 	initMap();
+	// })
+	$(function(){
+		$('#nav-icon').on('click', function(e){
+			e.preventDefault();
+			$(this).toggleClass('open');
+			$('#nav').toggleClass('active')
+		})
+	})
+</script>
 </body>
 </html>

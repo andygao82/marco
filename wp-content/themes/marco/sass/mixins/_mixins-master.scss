@@ -48,18 +48,29 @@
 	}
 }
 
+@mixin linkHover($backgroundColor: #0B4531){
+	@include transction();
+	&:hover, &:focus, &:active{
+		color: $backgroundColor;
+		&::after{
+			@include transction();
+			background-color: $backgroundColor;
+		}
+	}
+}
+
 @mixin pbm($paddingBottom: 30px, $borderColor: #BD742C, $marginBottom: 30px) {
 	margin-bottom: $marginBottom;
 	border-bottom: 1px solid $borderColor;
 	padding-bottom: $paddingBottom;
 }
 
-@mixin imgWrapper($paddingBottom: 66%) {
+@mixin imgWrapper($paddingBottom: 66%, $position: absoulte) {
 	position: relative;
 	&::after{
 		content: '';
 		display: block;
-		position: absolute;
+		position: $position;
 		width: 100%;
 		padding-bottom: $paddingBottom;
 	}
@@ -78,4 +89,16 @@
 	height: 100%;
 	object-fit: cover;
 	object-position: center;
+}
+
+@mixin linkBtmLine($color: #fff) {
+	&::after{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 4px;
+		background-color: $color;
+		bottom: 0;
+	}
 }
