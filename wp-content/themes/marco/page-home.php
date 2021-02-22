@@ -3,34 +3,25 @@
     get_header();
     $img_path = get_template_directory_uri( '/' );
     $size = 'full';
-    // $_categories = array(
-    //     array("name"=>"Fruit & Veggies","url"=>"fruit-veggies"), 
-    //     array("name"=>"Deli", "url"=>"deli"), 
-    //     array("name"=> "Butcher", "url"=>"butcher"), 
-    //     array("name"=> "Frozen Foods", "url"=> "frozen-foods"), 
-    //     array("name"=> "Groceries", "url"=> "groceries"), 
-    //     array("name"=> "Bakery", "url"=> "bakery"), 
-    //     array("name"=> "Dairy", "url"=> "dairy"), 
-    //     array("name"=> "Organic", "url"=> "organic"), 
-    //     array("name"=> "Flowers", "url"=> "flowers"), 
-    //     array("name"=> "Cafe", "url"=> "cafe"), 
-    // )
+
 ?>
 <main>
     <div class="banner banner-main banner-home banner-section">
         <div class="flexslider">
             <ul class="slides">
-                <?php for ($i = 1; $i <= 3; $i++) { ?>
-                    <li>
-                        <?php $_img = get_field('home_banner_slide_'.$i.'') ?>
-                        <?php if($_img): ?>
-                            <?php $image_url = $_img['url']; ?>
-                            <?php $image_alt = $_img['alt']; ?>
-                            <?php $image_caption = $_img['caption']; ?>
-                            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
-                            <h2 class="text-center"><?php echo esc_attr($image_caption);?></h2>
-                        <?php endif ?>
-                    </li>
+                <?php for ($i = 1; $i <= 6; $i++) { ?>
+                    <?php $_img = get_field('home_banner_slide_'.$i.'') ?>
+                    <?php if(!empty($_img)) :?>
+                        <li>
+                            <?php if($_img): ?>
+                                <?php $image_url = $_img['url']; ?>
+                                <?php $image_alt = $_img['alt']; ?>
+                                <?php $image_caption = $_img['caption']; ?>
+                                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                                <h2 class="text-center"><?php echo esc_attr($image_caption);?></h2>
+                            <?php endif ?>
+                        </li>
+                    <?php endif ?>
                 <?php } ?>
             </ul>
         </div>
@@ -41,7 +32,7 @@
                 <div class="col-12">
                     <div class="wrapper">
                         <div class="about-video">
-                            <a href="https://www.youtube.com/watch?v=9i4SKHbhbqk" >
+                            <a href="https://www.youtube.com/watch?v=9i4SKHbhbqk" data-lity>
                                 <img src="https://img.youtube.com/vi/9i4SKHbhbqk/maxresdefault.jpg" alt="Our Story">
                                 <i class="far fa-play-circle"></i>
                             </a>
@@ -72,7 +63,7 @@
                 if ( $myposts ) {
                     foreach ( $myposts as $post ) :
                         setup_postdata( $post ); ?>
-                        <li class="col-12 col-md-6 col-category">
+                        <li class="col-12 col-md-6 col-category move">
                             <div class="wrapper text-center">
                                 <?php $_thumbnail = get_the_post_thumbnail() ?>
                                 <a class="post-thumbnail" href="<?php echo esc_url( get_permalink() )?>">

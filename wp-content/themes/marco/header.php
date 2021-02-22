@@ -21,8 +21,9 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js" /></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inview/1.0.0/jquery.inview.min.js"></script>
 	<?php wp_head(); ?>
 </head>
 
@@ -36,7 +37,7 @@
 				<div class="col-12">
 					<div class="wrapper">
 						<a class="marco-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" >
-							<img src="<?php echo get_template_directory_uri('/'); ?>/images/logo.svg" alt="Marco Fine Foods and Groceries">
+							<img src="<?php echo get_template_directory_uri('/'); ?>/images/logo.svg" alt="Marco Fine Foods and Groceries" />
 						</a>
 						<a href="javascript:;" id="nav-icon">
 							<span></span>

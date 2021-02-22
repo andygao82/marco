@@ -116,27 +116,17 @@
 
 <?php wp_footer(); ?>
 <script>
-	// function initMap(){
-	// 	var myLatLng = {lat: -37.7257205, lng: 145.0246659}
-	// 	var map = new google.maps.Map(document.getElementById("map"), {
-	// 		center: myLatLng,
-	// 		zoom: 16,
- 	// 	});
-	// 	new google.maps.Marker({
-	// 		position: myLatLng,
-	// 		map,
-	// 		icon: "<?php echo get_template_directory_uri('/'); ?>/images/favicon.png"
-	// 	}) 
-	// }
-	// $(function () {
-	// 	initMap();
-	// })
 	$(function(){
 		$('#nav-icon').on('click', function(e){
 			e.preventDefault();
 			$(this).toggleClass('open');
-			$('#nav').toggleClass('active')
-		})
+			$('#nav').toggleClass('active');
+		});
+		$('.move').on('inview', function(event, isInView) {
+			if (isInView) {
+				$(this).addClass('in')
+			}
+		});
 	})
 </script>
 </body>

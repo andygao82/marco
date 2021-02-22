@@ -65,7 +65,7 @@
 	padding-bottom: $paddingBottom;
 }
 
-@mixin imgWrapper($paddingBottom: 66%, $position: absoulte) {
+@mixin imgWrapper($paddingBottom: 66%, $position: relative) {
 	position: relative;
 	&::after{
 		content: '';
@@ -91,7 +91,7 @@
 	object-position: center;
 }
 
-@mixin linkBtmLine($color: #fff) {
+@mixin linkBtmLine($color: #fff, $bottom: 0) {
 	&::after{
 		content: '';
 		display: block;
@@ -99,6 +99,20 @@
 		width: 100%;
 		height: 4px;
 		background-color: $color;
-		bottom: 0;
+		bottom: $bottom;
+	}
+}
+
+@mixin overlay($position: absolute) {
+	overflow: hidden;
+	&::after{
+		content: '';
+		display: block;
+		position: $position;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,.1);
 	}
 }

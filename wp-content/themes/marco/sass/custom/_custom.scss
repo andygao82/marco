@@ -22,6 +22,15 @@ h2{
 	margin-bottom: 1em;
 	color: #ffffff;
 }
+.move{
+	opacity: 0;
+	@include transction(1s);
+	transform: translateY(60px);
+	&.in{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
 a{
   text-decoration: none;
   @include hoverFocusActive(#fff, transparent)
@@ -302,14 +311,39 @@ ul{
 		width: calc(100% - 450px);
 		.menu{
 			@include flex();
-			margin-top: 30px;
+			margin-top: 50px;
 			li{
 				a{
+					position: relative;
+					display: block;
+					overflow: hidden;
 					text-transform: uppercase;
 					color: $color__brown;
 					font-weight: 700;
 					font-size: 2.2rem;
-					@include hoverFocusActive(#fff, transparent);
+					padding-bottom: 30px;
+					@include transction();
+					@include linkBtmLine(transparent, 0);
+					&:hover{
+						color: #fff;
+						&::after{
+							@include transction();
+							background-color: #fff;
+							bottom: 3px;
+						}
+					
+					}
+					
+				}
+				&.current_page_item {
+					a{
+						color: #fff;
+						&::after{
+							@include transction();
+							background-color: #fff;
+							bottom: 3px;
+						}
+					}
 				}
 			}
 		}
@@ -457,6 +491,12 @@ footer{
 		}
 		.link{
 			margin-right: 80px;
+			&:hover, &:active, &:focus{
+				color: $color__brown;
+				&::after{
+					background-color: $color__brown;
+				}
+			}
 		}
 	}
 }
@@ -531,6 +571,31 @@ main{
 						}
 					}
 				}
+			}
+		}
+		&-category, &-about{
+			position: relative;
+			background-image: url('../images/marco-bg.png');
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			@include overlay();
+			.wrapper{
+				position: relative;
+				height: 460px;
+			}
+			h1{
+				text-align: center;
+				width: 100%;
+				max-width: 990px;
+				font-size: 6.5rem;
+				letter-spacing: 9.75px;
+				line-height: 1.6;
+				color: #fff;
+				text-transform: uppercase;
+				font-weight: 700;
+				@include centerItem();
+				margin: 0;
 			}
 		}
 	}
@@ -608,6 +673,39 @@ main{
 				@include centerItem();
 				z-index: 5;
 			}
+		}
+	}
+}
+.main-content{
+	background-color: $color__brown;
+	color: #fff;
+	padding: 80px 0 300px;
+	.excerpt{
+		font-weight: 600;
+		font-size: 2.2rem;
+	}
+	.content{
+		line-height: 2;
+	}
+}
+.page-template-page-about{
+	.main-content{
+		background-color: #fff;
+		color: $color__dark
+	}
+}
+.gallery{
+	position: relative;
+	z-index: 2;
+	transform: translateY(-220px);
+	.col-category-img{
+		margin-bottom: 30px;
+	}
+	.img-wrapper{
+		@include imgWrapper(57%);
+		overflow: hidden;
+		img{
+			@include imgFit();
 		}
 	}
 }
@@ -847,6 +945,16 @@ main{
 					}
 				}
 			}
+			&-category, &-about{
+				.wrapper{
+					height: 300px;
+					h1{
+						font-size: 3.6rem;
+						letter-spacing: 4px;
+						line-height: 1.6;
+					}
+				}
+			}
 		}
 	}
 	.about-section{
@@ -870,6 +978,19 @@ main{
 					width: 100%;
 				}
 			}
+		}
+	}
+	.main-content{
+		padding: 40px 0;
+		.excerpt{
+			font-size: 1.8rem;
+		}
+	}
+	.gallery{
+		padding: 40px 0;
+		transform: translateY(0);
+		.col-category-img{
+			margin-bottom: 15px;
 		}
 	}
 }
