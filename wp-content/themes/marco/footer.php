@@ -11,6 +11,9 @@
 
 ?>
 		<div class="map">
+			<div class="map-wrapper">
+				<img src="<?php echo get_template_directory_uri('/'); ?>/images/map.png" alt="Marco Map">
+			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col">
@@ -53,9 +56,9 @@
 							</ul>
 						</div>
 						<div class="footer-opening-hours">
+							<h3>Opening Hours</h3>
 							<span>Monday - Saturday</span>
 							<span>8:00 AM - 8:00 PM</span>
-							<br>
 							<span>Sunday</span>
 							<span>8:00 AM - 6:00 PM</span>
 						</div>

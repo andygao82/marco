@@ -3,8 +3,8 @@
     get_header();
     $img_path = get_template_directory_uri( '/' );
     $size = 'full';
-
 ?>
+
 <main>
     <div class="banner banner-main banner-home banner-section">
         <div class="flexslider">
@@ -32,8 +32,8 @@
                 <div class="col-12">
                     <div class="wrapper">
                         <div class="about-video">
-                            <a href="https://www.youtube.com/watch?v=9i4SKHbhbqk" data-lity>
-                                <img src="https://img.youtube.com/vi/9i4SKHbhbqk/maxresdefault.jpg" alt="Our Story">
+                            <a href="https://www.youtube.com/watch?v=<?= get_field('home_video_id')?>" data-lity>
+                                <img src="https://img.youtube.com/vi/<?= get_field('home_video_id')?>/maxresdefault.jpg" alt="Our Story">
                                 <i class="far fa-play-circle"></i>
                             </a>
                         </div>

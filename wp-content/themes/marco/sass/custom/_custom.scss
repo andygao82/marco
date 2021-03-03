@@ -3,6 +3,7 @@ $color__green: #0B4531;
 $color__brown: #BD742C;
 $color__dark: #1c1c1c;
 $color__ldark: #707070;
+$color__bg: #413424;
 html{
   font-size: 10px;
 }
@@ -10,6 +11,9 @@ body{
   font-family: 'Raleway', sans-serif;
   font-size: 1.6rem;
   font-weight: 500;
+}
+a:visited{
+	color: #ffffff;
 }
 .post, .page{
   margin-bottom: 0;
@@ -41,260 +45,89 @@ ul{
   margin: 0;
   padding: 0;
 }
-.page-template-page-under{
-  header, footer{
-    display: none;
-  }
-  main{
-    background-image: url("../images/bg.png");
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    color: #ffffff;
-    background-size: cover;
-    background-position: center center;
-    .logo{
-      max-width: 400px;
-      margin: 0 auto 35px;
-    }
-    .wrapper{
-      .inner-wrapper{
-        position: absolute;
-        width: 100%;
-        max-width: 1700px;
-        padding: 0 15px;
-        top: 170px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-transform: uppercase;
-        color: #fdf9d2;
-        text-align: center;
-        .top{
-          background: $color__green;
-          h1{
-            font-weight: 700;
-            color: #ffffff;
-            margin: 0;
-            letter-spacing: 5px;
-            font-size: 6rem;
-            padding: 12px 15px;
-            sup{
-              font-size: 2.5rem;
-            }
-          }
-        }
-        p{
-          font-size: 1.6rem;
-          letter-spacing: 1.6px;
-          font-weight: 500;
-        }
-        .middle{
-          background: #ffffff;
-          padding: 20px 15px;
-          color: $color__green;
-          font-weight: 500;
-          h2{
-            font-weight: 700;
-            margin: 0;
-            letter-spacing: 2px;
-            font-size: 2.6rem;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            img{
-              margin-left: 30px;
-              max-width: 32px;
-            }
-          }
-          #mc_embed_signup{
-            form{
-              #mc_embed_signup_scroll{
-                display: flex;
-                width: 100%;
-                max-width: 1400px;
-                margin: auto;
-                flex-direction: row;
-                justify-content: space-between;
-                .mc-field-group{
-                  width: 25%;
-                  label{
-                    display: none;
-                  }
-                  input{
-                    text-transform: uppercase;
-                    font-size: 1.6rem;
-                    letter-spacing: 1.2px;
-                    font-weight: 500;
-                    color: $color__green;
-                    border: 0;
-                    border-bottom: 1px solid $color__green;
-                    border-radius: 0;
-                    width: 100%;
-                    padding: 10px 0;
-                    &#mce-EMAIL{
-                      min-width: 350px;
-                    }
-                  }
-                }
-                #mc-embedded-subscribe{
-                  border: 1px solid $color__green;
-                  background-color: transparent;
-                  font-size: 16px;
-                  border-radius: 0;
-                  padding: 15px 50px;
-                  font-weight: 500;
-                  text-transform: uppercase;
-                  transition: all .25s ease-in-out;
-                  cursor: pointer;
-                  &:hover{
-                    background-color: $color__green;
-                    color: #ffffff;
-                  }
-                }
-              }
-            }
-          }
-        }
-        .bottom{
-          background: $color__brown;
-          color: #ffffff;
-          padding: 20px 15px;
-          ul{
-            display: flex;
-            list-style: none;
-            margin: 0 auto 20px;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            li{
-              font-size: 4rem;
-              letter-spacing: 3px;
-              text-transform: uppercase;
-              font-weight: 700;
-              padding: 0 25px;
-              position: relative;
-              &:after{
-                position: absolute;
-                content: '';
-                display: inline-block;
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                overflow: hidden;
-                background: #ffffff;
-                right: -5px;
-                top: 50%;
-                transform: translateY(-50%);
-              }
-              &:last-child{
-                &:after{
-                  display: none;
-                }
-              }
-            }
-          }
-          .contact{
-            display: flex;
-            width: 100%;
-            max-width: 1400px;
-            margin: auto;
-            justify-content: space-between;
-            text-transform: uppercase;
-            font-size: 2.5rem;
-            letter-spacing: 2.4px;
-            font-weight: 500;
-            a{
-              color: #ffffff;
-            }
-          }
-        }
-      }
-    }
-  }
-}
 .social-media{
   display: flex;
   list-style: none;
   justify-content: center;
   li{
-    width: 32px;
-    height: 32px;
-    background: #ffffff;
-    border-radius: 50%;
-    display: inline-flex;
-    font-size: 2rem;
-    justify-content: center;
-    align-items: center;
-    margin: 0 20px;
-    a{
+	width: 32px;
+	height: 32px;
+	background: #ffffff;
+	border-radius: 50%;
+	display: inline-flex;
+	font-size: 2rem;
+	justify-content: center;
+	align-items: center;
+	margin: 0 20px;
+	a{
 		color: $color__green;
 		transition: all .25s ease-in-out;
 		&:hover{
 			color: $color__brown;
 		}
-    }
+	}
   }
 }
 .page-template-page-covid{
   header, footer{
-    display: none;
+	display: none;
   }
 
   main{
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    .wrapper{
-      position: absolute;
-      min-width: 320px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      .inner-wrapper{
-        padding: 15px;
-        .logo{
-          max-width: 240px;
-          margin: 0 auto 30px;
-        }
-        form{
-          .field{
-            margin-bottom: 15px;
-            label{
-              display: block;
-              font-size: 14px;
-              margin-bottom: .5em;
-              font-weight: 500;
-              color: $color__brown;
-            }
-            span{
-              display: block;
-              input{
-                width: 100%;
-                border: 1px solid $color__green;
-                padding: 8px 15px;
-                font-size: 14px;
-              }
-            }
-          }
-          input.wpcf7-submit{
-            text-transform: uppercase;
-            background-color: $color__green;
-            color: #ffffff;
-            width: 100%;
-            padding: 12px 15px;
-            letter-spacing: 1px;
-            font-size: 18px;
-            margin-top: 10px;
-            cursor: pointer;
-            transition: all ease-in-out .25s;
-            &:hover, &:active, &:focus{
-              background-color: $color__brown;
-            }
-          }
-        }
-      }
-    }
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	.wrapper{
+	  position: absolute;
+	  min-width: 320px;
+	  left: 50%;
+	  top: 50%;
+	  transform: translate(-50%, -50%);
+	  .inner-wrapper{
+		padding: 15px;
+		.logo{
+		  max-width: 240px;
+		  margin: 0 auto 30px;
+		}
+		form{
+		  .field{
+			margin-bottom: 15px;
+			label{
+			  display: block;
+			  font-size: 14px;
+			  margin-bottom: .5em;
+			  font-weight: 500;
+			  color: $color__brown;
+			}
+			span{
+			  display: block;
+			  input{
+				width: 100%;
+				border: 1px solid $color__green;
+				padding: 8px 15px;
+				font-size: 14px;
+			  }
+			}
+		  }
+		  input.wpcf7-submit{
+			text-transform: uppercase;
+			background-color: $color__green;
+			color: #ffffff;
+			width: 100%;
+			padding: 12px 15px;
+			letter-spacing: 1px;
+			font-size: 18px;
+			margin-top: 10px;
+			cursor: pointer;
+			transition: all ease-in-out .25s;
+			&:hover, &:active, &:focus{
+			  background-color: $color__brown;
+			}
+		  }
+		}
+	  }
+	}
   }
 }
 @media (min-width: 1700px){
@@ -351,9 +184,12 @@ ul{
 	}
 }
 header{
-	background-color: $color__dark;
+	position: sticky;
+	top: 0;
+	background-color: $color__bg;
 	padding: 20px 0;
 	height: 130px;
+	z-index: 99;
 	.marco-logo{
 		display: block;
 		width: 100%;
@@ -364,8 +200,9 @@ header{
 	}
 }
 footer{
+	border-top: 25px solid $color__brown;
 	color: #ffffff;
-	background-color: $color__dark;
+	background-color: $color__bg;
 	padding: 50px 0 40px;
 	#footer-logo{
 		display: block;
@@ -394,6 +231,7 @@ footer{
 			.footer-opening-hours{
 				span{
 					display: block;
+					margin-bottom: 5px;
 				}
 			}
 			.footer-newsletter{
@@ -412,7 +250,7 @@ footer{
 						font-style: italic;
 						width: 100%;
 						max-width: unset;
-
+						color: #ffffff;
 					}
 				}
 				.mc-fields{
@@ -461,21 +299,38 @@ footer{
 	}
 }
 .map{
+	position: relative;
 	width: 100%;
 	height: 600px;
-	background-image: url('../images/map.png');
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
 	color: #fff;
+	.container{
+		height: 100%;
+		.row{
+			height: 100%;
+		}
+	}
+	&-wrapper{
+		position: absolute;
+		z-index: 1;
+		img{
+			width: 1920px;
+			max-width: unset;
+			object-position: center center;
+			object-fit: contain;
+			height: 100%;
+		}
+	}
 	a{
 		color: #fff;
 	}
 	.wrapper{
+		position: absolute;
+		z-index: 2;
 		display: inline-block;
-		margin-top: 95px;
 		background-color: $color__green;
 		padding: 60px 80px;
+		top: 50%;
+		transform: translateY(-50%);
 		h2{
 			letter-spacing: 8.25px;
 		}
@@ -492,12 +347,7 @@ footer{
 		}
 		.link{
 			margin-right: 80px;
-			&:hover, &:active, &:focus{
-				color: $color__brown;
-				&::after{
-					background-color: $color__brown;
-				}
-			}
+		
 		}
 	}
 }
@@ -512,10 +362,29 @@ footer{
 	line-height: 1.2;
 	font-weight: 600;
 	color: #ffffff;
-	padding: 20px 0;
+	padding: 20px 10px;
 	text-decoration: none;
-	@include linkBtmLine();
-	@include linkHover();
+	&::after, &::before{
+		content: '';
+		position: absolute;
+		display: block;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #fff;
+		transition: all .25s ease;
+		transform: scale(.9);
+	}
+	&:hover{
+		&::before{
+			top: 0;
+			transform: scale(1);
+		}
+		&::after{
+			transform: scale(1);
+		}
+	}
 }
 main{
 	.section{
@@ -550,6 +419,7 @@ main{
 							font-size: 6.5rem;
 							letter-spacing: 9.75px;
 							line-height: 100px;
+							text-transform: uppercase;
 							z-index: 9;
 						}
 					}
@@ -574,7 +444,7 @@ main{
 				}
 			}
 		}
-		&-category, &-about, &-contact{
+		&-category, &-about, &-contact, &-featured{
 			position: relative;
 			background-image: url('../images/marco-bg.png');
 			background-position: center center;
@@ -638,7 +508,7 @@ main{
 .category-section{
 	padding: 60px 45px;
 	color: #ffffff;
-	background-color: $color__dark;
+	background-color: $color__bg;
 	h2, a{
 		color: #ffffff;
 	}
@@ -682,13 +552,13 @@ main{
 .main-content{
 	background-color: $color__brown;
 	color: #fff;
-	padding: 80px 0 300px;
+	padding: 80px 0;
 	.excerpt{
 		font-weight: 600;
 		font-size: 2.2rem;
 	}
 	.content{
-		line-height: 2;
+		line-height: 2.3;
 	}
 }
 .page-template-page-contact{
@@ -755,6 +625,15 @@ main{
 			
 		}
 	}
+	.get-direction{
+		margin-top: 60px;
+		color: $color__dark;
+		padding: 10px 10px;
+		font-weight: 900;
+		&::after, &::before{
+			background-color: $color__brown;
+		}
+	}
 	.button{
 		position: relative;
 		font-weight: 700;
@@ -767,16 +646,25 @@ main{
 		background-color: transparent;
 		border-radius: 0;
 		text-transform: uppercase;
-		@include linkBtmLine($color__brown);
 		text-align: left;
 		font-weight: 700;
-		&::after{
+		@include transction();
+		&::after, &::before{
 			left: 0;
+			top: 100%;
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 4px;
+			background-color: $color__brown;
+			@include transction();
 		}
-		&.get-direction{
-			margin-top: 60px;
-			
+		&:hover{
+			&::before{
+				top: 0;
+			}
 		}
+		
 	}
 	.wrapper-right{
 		padding-left: 150px;
@@ -788,16 +676,143 @@ main{
 		}
 	}
 }
-.page-template-page-about, .page-template-page-contact{
+.page-template-page-blog{
+	.col-blog{
+		margin-bottom: 30px;
+		.wrapper{
+			border: 1px solid $color__green;
+		}
+	
+		.inner-wrapper{
+			padding: 40px 80px;
+		}
+		.post-thumbnail{
+			display: block;
+			@include imgWrapper(40%);
+			img{
+				@include imgFit();
+			}
+		}
+		h2{
+			font-size: 2.2rem;
+			line-height: 1.8;
+			text-transform: uppercase;
+			margin-bottom: 1.5em;
+			font-weight: 800;
+			a{
+				color: $color__dark;
+			}
+		}
+		.blog-excerpt{
+			p{
+				margin-bottom: 0;
+				line-height: 2.3;
+			}
+			color: $color__ldark;
+			margin-bottom: 30px;
+		}
+		.link{
+			padding: 15px 0;
+			color: $color__dark;
+			font-weight: 900;
+			&::after, &::before{
+				width: 100%;
+				height: 4px;
+				transform: scale(1);
+				background-color: $color__brown;
+			}
+			
+		}
+	}
+	.col-sidebar{
+		padding-top: 40px;
+		padding-left: 100px;
+		h2{
+			font-size: 2.2rem;
+			font-weight: 800;
+			text-transform: capitalize;
+			color: $color__dark;
+			margin-bottom: 5px;
+		}
+		ul{
+			margin-bottom: 60px;
+			li{
+				a{
+					color: $color__dark;
+					margin-bottom: 5px;
+					display: block;
+				}
+			}
+		}
+	}
+}
+.page-template-page-featured{
+	.main-content{
+		.col-featured{
+			margin-bottom: 60px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		.wrapper{
+			@include flex();
+			background-color: #fff;
+			.image-wrapper{
+				width: 50%;
+				@include imgWrapper(55%);
+				img{
+					@include imgFit();
+				}
+			}
+			.content-wrapper{
+				width: 50%;
+				color: $color__dark;
+				padding: 65px 90px;
+				h2{
+					font-size: 2.2rem;
+					line-height: 1.5;
+					color: $color__dark;
+				}
+				p{
+					line-height: 2.3;
+				}
+			}
+		}
+	}
+}
+.page-template-page-about, .page-template-page-contact, .page-template-page-blog, .single{
 	.main-content{
 		background-color: #fff;
 		color: $color__dark
 	}
 }
+.single{
+	&.post-template-single-category{
+		.main-content{
+			color: #fff;
+			padding: 80px 0 300px;
+			background-color: $color__brown;
+		}
+	}
+	.main-content{
+		padding: 80px 0;
+		.container{
+			width: 100%;
+			max-width: 767px;
+			margin: auto;
+		}
+		.entry-meta{
+			a{
+				color: $color__brown;
+			}
+		}
+	}
+}
+
 .gallery{
 	position: relative;
-	z-index: 2;
 	transform: translateY(-220px);
+	z-index: 2;
 	.col-category-img{
 		margin-bottom: 30px;
 	}
@@ -809,6 +824,105 @@ main{
 		}
 	}
 }
+.pum-theme-200 .pum-content + .popmake-close, .pum-theme-content-only .pum-content + .popmake-close{
+	font-size: 8rem !important;
+	font-weight: 100 !important;
+	background-color: $color__brown !important;
+	color: transparent !important;
+	width: 50px !important;
+	height: 50px !important;
+	border-radius: 0 !important;
+	right: 0 !important;
+	top: 0 !important;
+	box-shadow:  none !important;
+	text-shadow: none !important;
+	border: 0 !important;
+	min-width: unset !important;
+	@include transction();
+	&:hover{
+		background-color: $color__green !important;
+	}
+	&::before, &::after{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		background-color: #ffffff;
+		left: 0;
+		@include transction(.25s);
+		top: 50%;
+	}
+	&:before{
+		transform: rotate(-45deg);
+	}
+	&:after{
+		transform: rotate(45deg);
+	}
+	
+}
+.popmake-content{
+	.wrapper{
+		background-color: #fff;
+		@include flex();
+		.mc4wp-form{
+			width: 100%;
+			max-width: 552px;
+			margin: auto;	
+		}
+		h2{
+			font-size: 4.5rem;
+			font-weight: 700;
+			letter-spacing: 6.75px;
+			color: $color__green;
+			line-height: 1.5;
+		}
+		p{
+			font-size: 2rem;
+			color: $color__ldark;
+			margin-bottom: 40px;
+			letter-spacing: 0.4px;
+			line-height: 2;
+		}
+		.field-sets{
+			margin-bottom: 30px;
+			input{
+				border-radius: 0;
+				border: 1px solid $color__green;
+				height: 52px;
+				width: 100%;
+				color: $color__ldark;
+				font-style: italic;
+				font-size: 1.6rem;
+				padding: 0 15px;
+				letter-spacing: .26px;
+			}
+			@include flex();
+			.field{
+				width: 48%;
+			}
+		}
+		.submit{
+			input{
+				border-radius: 0;
+				border: 1px solid $color__brown;
+				height: 52px;
+				width: 100%;
+				color: #fff;
+				font-size: 2rem;
+				padding: 0 15px;
+				letter-spacing: 4px;
+				background-color: $color__brown;
+				@include transction();
+				&:hover{
+					background-color: $color__green;
+					border: 1px solid $color__green;
+				}
+			}
+		}
+	}
+}
+
 /////////////////////////////////////////
 @media screen and (max-width: 1700px){
 	body{
@@ -835,31 +949,31 @@ main{
 			}
 			.middle{
 				h2{
-				font-size: 2.2rem;
-				img{
-					max-width: 25px;
-					margin-left: 20px;
-				}
+					font-size: 2.2rem;
+					img{
+						max-width: 25px;
+						margin-left: 20px;
+					}
 				}
 				#mc_embed_signup{
 				form{
 					#mc_embed_signup_scroll{
-					max-width: 990px;
-					.mc-field-group{
-						input{
-						width: 100%;
-						min-width: unset !important;
+						max-width: 990px;
+						.mc-field-group{
+							input{
+							width: 100%;
+							min-width: unset !important;
+							}
 						}
-					}
 					}
 				}
 				}
 			}
 			.bottom{
 				ul{
-				li{
-					font-size: 3.5rem;
-				}
+					li{
+						font-size: 3.5rem;
+					}
 				}
 				.contact{
 				font-size: 2rem;
@@ -928,7 +1042,6 @@ main{
 		height: 500px;
 		.wrapper{
 			padding: 50px 66.67px;
-			margin-top: 62px;
 			h4{
 				font-size: 2rem;
 			}
@@ -937,8 +1050,38 @@ main{
 			}
 		}
 	}
+	.popmake-content{
+		.wrapper{
+			h2{
+				font-size: 3.3rem;
+				letter-spacing: 3.5px
+			}	
+			p{
+				font-size: 1.6rem;
+			}
+			.mc4wp-form{
+				padding: 0 25px;
+			}
+		}
+	}
 }
 @media screen and (max-width: 1199px){
+	.popmake-content{
+		.image-wrapper{
+			display: none;
+		}
+		.wrapper{
+			h2{
+				font-size: 2.5rem;
+				letter-spacing: 3px
+			}	
+		
+			.mc4wp-form{
+				padding:  25px;
+				text-align: center;
+			}
+		}
+	}
 	header{
 		.marco-logo{
 			z-index: 100;
@@ -1050,7 +1193,7 @@ main{
 					}
 				}
 			}
-			&-category, &-about, &-contact{
+			&-category, &-about, &-contact, &-featured{
 				.wrapper{
 					height: 400px;
 					h1{
@@ -1087,7 +1230,7 @@ main{
 	}
 	.main-content{
 		text-align: center;
-		padding: 40px 0;
+		padding: 40px 0 !important;
 		.excerpt{
 			font-size: 1.8rem;
 		}
@@ -1125,8 +1268,85 @@ main{
 			padding-left: 0;
 		}
 	}
+	.page-template-page-featured{
+		.main-content{
+			.col-featured{
+				margin-bottom: 30px;
+			}
+			.wrapper{
+				flex-direction: column;
+				.image-wrapper, .content-wrapper{
+					width: 100%;
+				}
+				.content-wrapper{
+					padding: 30px;
+				}
+			}
+		}
+	}
+	.map{
+		padding: 0;
+		background-color: $color__green;
+		@include flex(column-reverse);
+		height: auto;
+		&-wrapper{
+			position: relative;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+		.container{
+			height: auto;
+			.row{
+				height: auto;
+			}
+			.wrapper{
+				text-align: center;
+				position: relative;
+				top: auto;
+				display: block;
+				transform: unset;
+				.link{
+					margin-right: 15px;
+					margin-left: 15px;
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: 767px){
+	.pum-theme-200 .pum-content + .pum-close, .pum-theme-content-only .pum-content + .pum-close{
+		width: 30px !important;
+		height: 30px !important;
+	}
+	.popmake-content{
+		.wrapper{
+			.mc4wp-form{
+				padding: 50px 15px;
+				text-align: center;
+			}
+			p{
+				margin-bottom: 15px;
+			}
+			.field-sets{
+				margin-bottom: 0;
+				flex-direction: column;
+				.field{
+					width: 100%;
+					margin-bottom: 15px;
+				}
+			}
+			.submit{
+				margin-top: 15px;
+				input{
+					font-size: 1.6rem;
+
+				}
+			}
+		}
+	}
 	main{
 		.banner{
 			&.banner-home{
@@ -1152,11 +1372,12 @@ main{
 		}
 	}
 	.map{
-		padding: 40px 0;
-		height: unset;
 		.wrapper{
 			margin-top: 0;
 			padding: 30px;
+			h2{
+				font-size: 2.8rem;
+			}
 		}
 	}
 	header{
@@ -1235,6 +1456,23 @@ main{
 		}
 		.footer-links, .footer-opening-hours{
 			margin-bottom: 30px;
+		}
+	}
+	.page-template-page-blog{
+		.col-blog{
+			.inner-wrapper{
+				padding: 20px 25px 40px;
+			}
+			h2{
+				font-size: 2.4rem;
+				margin-bottom: 10px;
+			}
+			.blog-excerpt{
+				margin-bottom: 10px;
+			}
+		}
+		.col-sidebar{
+			padding: 30px 15px;
 		}
 	}
 }

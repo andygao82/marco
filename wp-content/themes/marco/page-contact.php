@@ -33,8 +33,8 @@
 						<div class="contact-info">
 							<h3>Store Hours -</h3>
 							<div>
-								Monday - Saturday: 8:00 AM - 8:00 PM<br>
-								Sunday: 8:00 AM - 6:00 PM
+								Sunday - Wednesday<br>8:00 AM - 6:00 PM<br>
+								Thursday - Saturday<br> 8:00 AM - 6:00 PM
 							</div>
 						</div>
 						<div class="contact-info">
@@ -45,11 +45,11 @@
 						</div>
 						<div class="contact-info">
 							<h3>Contact Information -</h3>
-							<div>Phone: +61 3 8888 8888<br>
+							<div>
 								Email: info@marcofinefoods.com.au								
 							</div>
 						</div>
-						<a href="#" target="_blank" class="button get-direction">Get Direction</a>
+						<a href="#" target="_blank" class="link get-direction">Get Direction</a>
 					</div>
 				</div>
 			</div>
