@@ -26,7 +26,7 @@
 									<p>830 Plenty Road, Reservoir VIC 3076</p>
 								</div>
 								<div class="links">
-									<a href="#" class="link">Conctact Us</a>
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>contact" class="link">Conctact Us</a>
 									<a target="_blank" class="link" href="https://www.google.com/maps/place/830+Plenty+Rd,+Reservoir+VIC+3073/@-37.7257248,145.0246712,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad645bf5d1452f5:0x39515cf6db36bab6!8m2!3d-37.7257248!4d145.0268599">Get Direction</a>
 								</div>
 							</div>
@@ -48,19 +48,18 @@
 						<div class="footer-links">
 							<h3>Get to Know Us</h3>
 							<ul>
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Feature Products</a></li>
-								<li><a href="#">Weekly Special</a></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>about">About Us</a></li>
+								<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>blog">Blog</a></li>
+								<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>features">Feature Products</a></li>
+								<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>contact">Contact Us</a></li>
 							</ul>
 						</div>
 						<div class="footer-opening-hours">
 							<h3>Opening Hours</h3>
-							<span>Monday - Saturday</span>
-							<span>8:00 AM - 8:00 PM</span>
-							<span>Sunday</span>
+							<span>Sunday - Wednesday</span>
 							<span>8:00 AM - 6:00 PM</span>
+							<span>Thursday - Saturday</span>
+							<span>8:00 AM - 8:00 PM</span>
 						</div>
 						<div class="footer-newsletter">
 							<h3>Subscribe Our Newsletter</h3>
