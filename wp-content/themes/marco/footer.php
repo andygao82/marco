@@ -12,7 +12,7 @@
 ?>
 		<div class="map">
 			<div class="map-wrapper">
-				<img src="<?php echo get_template_directory_uri('/'); ?>/images/map.png" alt="Marco Map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.7465692553656!2d145.02446470125673!3d-37.72562612966908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad645e29332014f%3A0xe131beddef826762!2sMarco%20Fine%20Foods%20%26%20Groceries!5e0!3m2!1sen!2sau!4v1617003263319!5m2!1sen!2sau" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 			</div>
 			<div class="container">
 				<div class="row">
@@ -54,13 +54,7 @@
 								<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>contact">Contact Us</a></li>
 							</ul>
 						</div>
-						<div class="footer-opening-hours">
-							<h3>Opening Hours</h3>
-							<span>Sunday - Wednesday</span>
-							<span>8:00 AM - 6:00 PM</span>
-							<span>Thursday - Saturday</span>
-							<span>8:00 AM - 8:00 PM</span>
-						</div>
+
 						<div class="footer-newsletter">
 							<h3>Subscribe Our Newsletter</h3>
 							<!-- Begin Mailchimp Signup Form -->

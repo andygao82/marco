@@ -137,15 +137,21 @@ ul{
 }
 @media (min-width: 1500px){
 	.container{
-		max-width: 1470px;
+		max-width: 1350px;
 	}
 }
 @media (min-width: 1200px){
 	nav#nav{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		width: calc(100% - 450px);
+		.menu-menu-1-container{
+			width: 100%;
+		}
 		.menu{
+			width: 100%;
 			@include flex();
-			margin-top: 50px;
 			li{
 				a{
 					position: relative;
@@ -155,19 +161,10 @@ ul{
 					color: $color__brown;
 					font-weight: 700;
 					font-size: 2.2rem;
-					padding-bottom: 30px;
 					@include transction();
-					@include linkBtmLine(transparent, 0);
 					&:hover{
 						color: #fff;
-						&::after{
-							@include transction();
-							background-color: #fff;
-							bottom: 3px;
-						}
-					
 					}
-					
 				}
 				&.current_page_item {
 					a{
@@ -302,6 +299,7 @@ footer{
 	position: relative;
 	width: 100%;
 	height: 600px;
+	overflow: hidden;
 	color: #fff;
 	.container{
 		height: 100%;
@@ -312,6 +310,9 @@ footer{
 	&-wrapper{
 		position: absolute;
 		z-index: 1;
+		width: 100%;
+		top: 0;
+		left: 0;
 		img{
 			width: 1920px;
 			max-width: unset;
@@ -799,6 +800,12 @@ main{
 		color: $color__dark
 	}
 }
+.page-template-page-about{
+	.main-content{
+		max-width: 1024px;
+		margin: auto;
+	}
+}
 .single{
 	&.post-template-single-category{
 		.main-content{
@@ -939,7 +946,7 @@ main{
 /////////////////////////////////////////
 @media screen and (max-width: 1700px){
 	body{
-		font-size: 1.4rem;
+		font-size: 1.5rem;
 	}
 	.page-template-page-under{
 		main{
@@ -1078,6 +1085,7 @@ main{
 		}
 	}
 }
+
 @media screen and (max-width: 1199px){
 	.popmake-content{
 		.image-wrapper{
